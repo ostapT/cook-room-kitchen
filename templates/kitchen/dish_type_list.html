@@ -3,7 +3,7 @@
 {% block content %}
   <h1>
     Dish type list
-    <a href="#" class="btn btn-primary link-to-page">
+    <a href="{% url 'kitchen:dish-type-create' %}" class="btn btn-primary link-to-page">
       Add new
     </a>
   </h1>
@@ -13,6 +13,8 @@
       {% for dish_type in dish_type_list %}
         <li>
           {{ dish_type.name }}
+          <a href="{% url 'kitchen:dish-type-update' pk=dish_type.id %}" class="btn btn-secondary">UPDATE</a>
+          <a href="{% url 'kitchen:dish-type-delete' pk=dish_type.id %}" class="btn btn-danger">DELETE</a>
         </li>
       {% endfor %}
     </ul>
