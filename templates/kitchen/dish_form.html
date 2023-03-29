@@ -3,7 +3,7 @@
 
 
 {% block content %}
-  <h1>{{ object|yesno:"Update,Create" }} dish type</h1>
+  <h1>{{ object|yesno:"Update this,Create new" }} dish</h1>
   <form action="" method="post" novalidate>
     {% csrf_token %}
     {{ form|crispy }}
