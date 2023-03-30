@@ -25,7 +25,7 @@ def index(request):
     context = {
         "num_dish_types": num_dish_types,
         "num_dishes": num_dishes,
-        "num_cooks": num_cooks
+        "num_cooks": num_cooks,
     }
     return render(request, "kitchen/index.html", context=context)
 
@@ -41,9 +41,7 @@ class DishListView(LoginRequiredMixin, generic.ListView):
         context = super(DishListView, self).get_context_data(**kwargs)
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = DishSearchForm(
-            initial={"name": name}
-        )
+        context["search_form"] = DishSearchForm(initial={"name": name})
         return context
 
     def get_queryset(self):
@@ -70,9 +68,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
         context = super(DishTypeListView, self).get_context_data(**kwargs)
         name = self.request.GET.get("name", "")
 
-        context["search_form"] = DishTypeSearchForm(
-            initial={"name": name}
-        )
+        context["search_form"] = DishTypeSearchForm(initial={"name": name})
         return context
 
     def get_queryset(self):
@@ -92,9 +88,7 @@ class CookListView(LoginRequiredMixin, generic.ListView):
         context = super(CookListView, self).get_context_data(**kwargs)
         username = self.request.GET.get("username", "")
 
-        context["search_form"] = CookSearchForm(
-            initial={"username": username}
-        )
+        context["search_form"] = CookSearchForm(initial={"username": username})
         return context
 
     def get_queryset(self):
@@ -169,9 +163,7 @@ class CookDeleteView(LoginRequiredMixin, generic.DeleteView):
 @login_required
 def toggle_assign_to_dish(request, pk):
     cook = Cook.objects.get(id=request.user.id)
-    if (
-        Dish.objects.get(id=pk) in cook.dishes.all()
-    ):
+    if Dish.objects.get(id=pk) in cook.dishes.all():
         cook.dishes.remove(pk)
     else:
         cook.dishes.add(pk)
