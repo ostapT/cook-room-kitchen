@@ -54,6 +54,7 @@ class DishDetailView(LoginRequiredMixin, generic.DetailView):
 
 class DishTypeListView(LoginRequiredMixin, generic.ListView):
     model = DishType
+    paginate_by = 5
     context_object_name = "dish_type_list"
     template_name = "kitchen/dish_type_list.html"
     success_url = reverse_lazy("kitchen:dish-type-list")
