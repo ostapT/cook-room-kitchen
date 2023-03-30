@@ -25,6 +25,7 @@ class CookAdmin(UserAdmin):
         )
     )
 
+
 @admin.register(Dish)
 class DishAdmin(admin.ModelAdmin):
     search_fields = ("name",)
