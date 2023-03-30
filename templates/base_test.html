@@ -53,14 +53,17 @@
 <div class="container-fluid">
     <div class="row">
 
-        <div class="mx-auto ">
-
-            {% block content %}{% endblock %}
 
 
-        </div>
+      {% block content %}{% endblock %}
+
+
+
     </div>
 </div>
+  {% block pagination %}
+    {% include "includes/pagination.html" %}
+  {% endblock %}
   {% block footer %}
 
     {% include 'includes/footer_background.html' %}

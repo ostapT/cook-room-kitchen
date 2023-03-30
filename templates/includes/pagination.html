@@ -1,0 +1,20 @@
+{% load query_transform %}
+{% if is_paginated %}
+  <ul class="pagination link-to-page">
+    {% if page_obj.has_previous %}
+      <li>
+        <button type="button" class="btn bg-gradient-light w-auto me-2"><a href="?{% query_transform request page=page_obj.previous_page_number %}"><<</a></button>
+
+      </li>
+    {% endif %}
+    <li>
+      <button type="button" class="btn bg-gradient-white w-auto me-2">{{ page_obj.number }} of {{ paginator.num_pages }}</button>
+
+    </li>
+    {% if page_obj.has_next %}
+      <li >
+          <button type="button" class="btn bg-gradient-light w-auto me-2"><a href="?{% query_transform request page=page_obj.next_page_number %}">>></a></button>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}

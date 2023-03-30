@@ -25,6 +25,7 @@ def index(request):
 
 class DishListView(LoginRequiredMixin, generic.ListView):
     model = Dish
+    paginate_by = 5
     context_object_name = "dish_list"
     success_url = reverse_lazy("kitchen:dish-list")
     queryset = Dish.objects.all()
@@ -77,7 +78,7 @@ class DishTypeListView(LoginRequiredMixin, generic.ListView):
 
 class CookListView(LoginRequiredMixin, generic.ListView):
     model = get_user_model()
-    paginate_by = 10
+    paginate_by = 5
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(CookListView, self).get_context_data(**kwargs)
