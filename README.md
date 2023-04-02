@@ -3,7 +3,7 @@
 Django project for managing dishes and cooks in café or restaurant kitchen
 
 ## Check in out!
-[Cook room kitchen project deployed to Render]()
+[Cook room kitchen project deployed to Render](https://cook-room-kitchen.onrender.com/)
 
 ## Installation
 Python3 must be already installed

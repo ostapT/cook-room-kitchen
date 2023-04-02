@@ -19,8 +19,8 @@
   </div>
 
 
-  <div class="ml-3">
     <h4>Dishes</h4>
+  {% if cook.dishes.all %}
     <table class="table">
         <tr>
           <th>ID</th>
@@ -36,11 +36,9 @@
           <td>{{ dish.price }}</td>
           <td>{{ dish.dish_type }}</td>
         </tr>
+      {% endfor %}
       </table>
-
-
-    {% empty %}
-      <p>No dishes!</p>
-    {% endfor %}
-  </div>
+  {% else %}
+    <p>No dishes!</p>
+  {% endif %}
 {% endblock %}
