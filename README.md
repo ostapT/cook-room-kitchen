@@ -16,6 +16,11 @@ source venv/bin/activate
 pip install -r requirements.txt
 python manage.py runserver #starts Django Server
 ```
+## Credential for testing:
+```angular2html
+Login: User123
+Password: kitchenpass123
+```
 ## Features
 
 * It's a useful tool for assigning cooks to certain dishes. 
