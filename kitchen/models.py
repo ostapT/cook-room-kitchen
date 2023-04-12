@@ -11,7 +11,7 @@ class DishType(models.Model):
     class Meta:
         ordering = ["name"]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return self.name
 
 
@@ -25,7 +25,7 @@ class Dish(models.Model):
     class Meta:
         ordering = ["dish_type"]
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.name} price: {self.price}"
 
 
@@ -36,7 +36,7 @@ class Cook(AbstractUser):
         verbose_name = "cook"
         verbose_name_plural = "cooks"
 
-    def __str__(self):
+    def __str__(self) -> str:
         return f"{self.first_name} {self.last_name}"
 
     def get_absolute_url(self):
