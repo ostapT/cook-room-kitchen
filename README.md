@@ -12,13 +12,16 @@ Python3 must be already installed
 git clone https://github.com/ostapT/cook-room-kitchen.git
 cd cook-room-kitchen
 python -m venv venv
-source venv/bin/activate
+source venv/bin/activate (on macOS)
+venv\Scripts\activate (on Windows)
 pip install -r requirements.txt
+python manage.py makemigratios
+python manage.py migrate
 python manage.py runserver #starts Django Server
 ```
 ## Credential for testing:
 ```angular2html
-Login: User123
+Login: user123
 Password: kitchenpass123
 ```
 ## Features
